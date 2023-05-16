@@ -6,120 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinabetes</title>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    .container-item-img img {
-        width: 100%;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        height: 100%;
-    }
-
-    .container-item-img polygon:nth-child(1) {
-        fill: rgba(0, 8, 255, 0.297);
-    }
-
-    .container-item-img polygon:nth-child(1):hover {
-        fill: rgb(255 255 255 / 49%);
-        cursor: pointer;
-        stroke: rgba(255, 255, 255, 0.75);
-    }
-
-    .container-item-img polygon {
-        fill: rgba(255, 0, 0, 0.416);
-    }
-
-    p#coords {
-        position: fixed;
-        background-color: #fff;
-        bottom: 0.2rem;
-        left: 0.2rem;
-        font-size: 1rem;
-        border-radius: 10px;
-        border: 1px solid #000;
-        padding: 0.2rem;
-    }
-
-    .container-item-img {
-        margin: 0 auto;
-        position: relative;
-        width: auto;
-        max-width: 1024px;
-        height: auto;
-    }
-
-    .container-svg-general {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-</style>
 
 <body>
-    <section class="container-section-editorImg">
-
-        <div class="container-item-img" id="container-item-img" onclick="cambiarColor();"
-            onmousemove="setCoords(event);">
-            <div class="container-svg-general">
-                <svg class="hs-poly-svg" viewBox="0 0 1024 580" preserveAspectRatio="none" id="sev-print-dom">
-                </svg>
+    <header>
+        <div class="container-general-header">
+            <div class="container-img-header-logo">
+                <img src="./src/palo_blanco_logo.webp" alt="">
             </div>
-            <img src="./src/pinabetes.png" alt="">
         </div>
-        <div class="container-responsive">
-            <div class="item-container-responsive">contenedor 1</div>
-            <div class="item-container-responsive">contenedor 2</div>
-            <div class="item-container-responsive">contenedor 3</div>
-            <div class="item-container-responsive">contenedor 4</div>
-            <div class="item-container-responsive">contenedor 5</div>
+    </header>
+    <section>
+        <div class="container-section-editorImg">
+            <div class="container-options">
+                <div class="item-container-options">
+                    <span>Agregar polygon</span>
+                </div>
+                <div class="item-container-options">Opción 2</div>
+                <div class="item-container-options">Opción 3</div>
+                <div class="item-container-options">Opción 4</div>
+                <div class="item-container-options">Opción 5</div>
+            </div>
+            <div class="container-options-content container-options hide">
+                <!--form action="" class="add-polygon-form">
+                    <div class="container-items-form-add-polygon">
+                        <label for="param1">X</label>
+                        <input type="number" name="param1">
+                        <label for="param1">Y</label>
+                        <input type="number" name="param1">
+                    </div>
+                </form-->
+                <p id="coords"></p>
+            </div>
+            <div class="container-general-designe">
+                <div class="container-item-img" id="container-item-img" onclick="cambiarColor();"
+                    onmousemove="setCoords(event);">
+                    <div class="container-svg-general">
+                        <svg class="hs-poly-svg" viewBox="0 0 1024 580" preserveAspectRatio="none" id="sev-print-dom">
+                        </svg>
+                    </div>
+                    <img src="./src/pinabetes.png" alt="">
+                </div>
+            </div>
         </div>
     </section>
-
-    <p id="coords"></p>
 </body>
 
 </html>
 
-<script>
-
-    var mouseX, mouseY;
-
-
-    function setCoords(e) {
-        if (e.offsetX) {
-            mouseX = e.offsetX;
-            mouseY = e.offsetY;
-        } else if (e.layerX) {
-            mouseX = e.layerX;
-            mouseY = e.layerY;
-        }
-
-        document.getElementById('coords').innerHTML = mouseX + ' X' + ', ' + mouseY + ' Y';
-    }
-
-    const svgprint = document.getElementById("sev-print-dom");
-    var newArray = [];
-
-    const valorPoligono1 = '451,227 463,373  159,396 155,391 144,251 149,248 450,224';
-    newArray = `
-    <polygon class="imp-shape imp-shape-poly" data-shape-title="Casa 69" points="${valorPoligono1}" />
-    `;
-
-    svgprint.innerHTML = newArray;
-
-    const containerItemImg = document.querySelector('.container-item-img');
-
-    console.log(containerItemImg)
-    console.log(containerItemImg.offsetHeight)
-
-</script>
+<script src="./js/index.js"></script>
