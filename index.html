@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pinabetes</title>
-    <link rel="stylesheet" href="./style/style.css">
-</head>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="container-general-header">
-            <div class="container-img-header-logo">
-                <img src="./src/palo_blanco_logo.webp" alt="">
-            </div>
+      <div class="container-general-header">
+        <div class="container-img-header-logo">
+          <img src="./src/palo_blanco_logo.webp" alt="" />
         </div>
+      </div>
     </header>
     <section>
-        <div class="container-section-editorImg">
-            <div class="container-options">
-                <div class="item-container-options">
-                    <span>Agregar polygon</span>
+      <div class="container-section-editorImg">
+        <div class="container-options">
+          <div class="item-container-options">
+            <span>Agregar polygon</span>
+          </div>
+          <div class="item-container-options">Opción 2</div>
+          <div class="item-container-options">Opción 3</div>
+          <div class="item-container-options">Opción 4</div>
+          <div class="item-container-options">Opción 5</div>
+        </div>
+        <div>
+          <form class="form-input-general">
+              <div class="container-inputs-polygon" id="container-inputs-polygon">
+                <div class="inputs-container-items">
+                    <label for="">Secuencia de coordenada</label>
+                    <input type="text" name="">
                 </div>
-                <div class="item-container-options">Opción 2</div>
-                <div class="item-container-options">Opción 3</div>
-                <div class="item-container-options">Opción 4</div>
-                <div class="item-container-options">Opción 5</div>
-            </div>
-            <div class="container-options-content container-options hide">
-                <!--form action="" class="add-polygon-form">
+              </div>
+          </form>
+        </div>
+        <div class="container-options-content container-options hide">
+          <!--form action="" class="add-polygon-form">
                     <div class="container-items-form-add-polygon">
                         <label for="param1">X</label>
                         <input type="number" name="param1">
@@ -37,22 +46,30 @@
                         <input type="number" name="param1">
                     </div>
                 </form-->
-                <p id="coords"></p>
-            </div>
-            <div class="container-general-designe">
-                <div class="container-item-img" id="container-item-img" onclick="cambiarColor();"
-                    onmousemove="setCoords(event);">
-                    <div class="container-svg-general">
-                        <svg class="hs-poly-svg" viewBox="0 0 1024 580" preserveAspectRatio="none" id="sev-print-dom">
-                        </svg>
-                    </div>
-                    <img src="./src/pinabetes.png" alt="">
-                </div>
-            </div>
+          <p id="coords"></p>
         </div>
+        <div class="container-general-designe">
+          <div
+            class="container-item-img"
+            id="container-item-img"
+            onclick="setCoords(event);"
+            onmousemove="viewCoords(event);"
+          >
+            <div class="container-svg-general">
+              <svg
+                class="hs-poly-svg"
+                viewBox="0 0 1024 580"
+                preserveAspectRatio="none"
+                id="sev-print-dom"
+              ></svg>
+            </div>
+            <img src="./src/pinabetes.png" alt="" />
+          </div>
+        </div>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>
 
+<script src="./js/fetch.js"></script>
 <script src="./js/index.js"></script>
